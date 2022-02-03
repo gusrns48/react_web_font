@@ -1,0 +1,272 @@
+@charset "UTF-8"
+
+html, body
+  //width: 100vw
+
+h4
+  margin: 0px
+
+ol
+  padding: 0px
+  margin: 0px
+
+li
+  list-style-type: none
+  padding-left: 0px
+
+body
+  margin: 0
+  font-size: 16px
+
+.container
+  width: 100%
+
+a
+  font-family: Mochiy Pop P One
+
+hr
+  margin-bottom: 25px
+
+input[type=range] 
+  width: 70%
+  
+
+input[type=radio]
+  font-family: Arial
+  margin-bottom: 20px
+
+.nowfontsize 
+    font-family: Mochiy Pop P One
+    font-size: 20px
+    display: inline
+    margin-left: 10px
+    line-height: 100px
+
+.fontbox
+  font-size: 100%
+  display: flex
+  font-size: 60px
+  //max-width: 100%
+  width: 100%
+  height: 100%
+  justify-content: center
+  flex-wrap: wrap
+  //flex-flow: wrap
+  //align-items:center
+  word-break: break-all
+  
+  li
+    width: 10%
+    min-width: 20%
+    //max-width: 200px
+    @media (pointer:coarse)
+      width: 50vh
+
+  .Comforter
+    border: 5px solid #000000
+    font-family: Comforter
+    margin: 10px 10px 10px 10px
+    padding: 20px 20px 20px 20px
+    &:hover
+      color: #fff
+      background-color: #000
+      
+    &:focus
+      color: #fff
+      background-color: grey
+
+  .Roboto 
+    border: 5px solid #000000
+    font-family: Roboto
+    margin: 10px 10px 10px 10px
+    padding: 20px 20px 20px 20px
+    &:hover
+      color: #fff
+      background-color: #000
+      border-color: #000
+    &:focus
+      color: #fff
+      background-color: grey
+
+
+  .Mochiy 
+    border: 5px solid #000000
+    font-family: Mochiy Pop P One
+    margin: 10px 10px 10px 10px
+    padding: 20px 20px 20px 20px
+    //min-width: 50px
+    &:hover
+      color: #fff
+      background-color: #000
+      border-color: #000
+    &:focus
+      color: #fff
+      background-color: grey
+
+
+  .Sedgwick 
+    border: 5px solid #000000
+    font-family: Sedgwick Ave
+    margin: 10px 10px 10px 10px
+    padding: 20px 20px 20px 20px
+    &:hover
+      color: #fff
+      background-color: #000
+      border-color: #000
+    &:focus
+      color: #fff
+      background-color: grey
+
+
+  .Source 
+    border: 5px solid #000000
+    font-family: Source Code Pro
+    margin: 10px 10px 10px 10px
+    padding: 20px 20px 20px 20px
+    &:hover
+      color: #fff
+      background-color: #000
+      border-color: #000
+    &:focus
+      color: #fff
+      background-color: grey
+
+
+  .Rubik 
+    border: 5px solid #000000
+    font-family: Rubik Beastly
+    margin: 10px 10px 10px 10px
+    padding: 20px 20px 20px 20px
+    &:hover
+      color: #fff
+      background-color: #000
+      border-color: #000
+    &:focus
+      color: #fff
+      background-color: grey
+
+
+  .Neonderthaw 
+    border: 5px solid #000000
+    font-family: Neonderthaw
+    margin: 10px 10px 10px 10px
+    padding: 20px 20px 20px 20px
+    &:hover
+      color: #fff
+      background-color: #000
+      border-color: #000
+    &:focus
+      color: #fff
+      background-color: grey
+
+
+  .Pacifico 
+    border: 5px solid #000000
+    font-family: Pacifico
+    margin: 10px 10px 10px 10px
+    padding: 20px 20px 20px 20px
+    &:hover
+      color: #fff
+      background-color: #000
+      border-color: #000
+    &:focus
+      color: #fff
+      background-color: grey
+
+  .showfontname 
+    font-family: 고딕
+    font-size: 20px
+    font-weight: bold
+    margin-bottom: 20px
+
+.popup 
+  display: none
+  //z-index: 10
+  position: fixed  //popup not broken
+  @media (pointer:coarse)
+    position: fixed
+    min-width: 95%
+    min-height: 10%
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+  min-width: 1000px
+  background-color: #fff
+  border-radius: 15px
+  box-shadow: 0 2px 1000px 0px
+  //box-shadow: 0 2px 55px -25px
+
+  .title
+    border-radius: 15px 15px 0 0
+    min-height: 40px
+    color: #fff
+    background-color: #b66
+    padding: 10px 15px
+    box-sizing: border-box
+    font-weight: bold //700
+    //vertical-align: middle
+
+  .import_title
+    min-height: 40px
+    color: #fff
+    background-color: #b66
+    padding: 10px 15px
+    box-sizing: border-box
+    font-weight: bold //700
+    &:hover
+      color: #fff
+      background-color: #000
+
+  .content 
+    font-size: 30px
+    @media (pointer:coarse)
+      font-size: 12px
+    //box-sizing: border-box
+    //margin-bottom: 25px
+    //line-height: 70px
+    -webkit-padding-start: 0px
+    text-align: center
+
+  .import_content
+    display: none
+    padding: 20px
+    font-size: 20px
+    font-family: Arial
+    box-sizing: border-box
+    line-height: 40px
+    @media (pointer:coarse)
+      font-size: 12px
+      line-height: 30px
+    .import_code
+      font-size: 15px
+      margin-left: px
+      @media (pointer:coarse)
+        font-size: 10px
+        line-height: 10px
+
+  .cmd 
+    padding: 15px 15px
+    box-sizing: border-box
+    text-align: right
+    .button
+      border-radius: 8px
+      padding: 5px 10px
+      border: 1px solid #aaa
+      &:hover 
+        color: #fff
+        background-color: #000
+        border-color: #000
+
+
+
+/*.backon
+  content: ""
+  width: 100%
+  height: 100%
+  background: #00000054
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 1*/
+
+/*# sourceMappingURL=footer.css.map */
