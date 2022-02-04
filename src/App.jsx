@@ -26,6 +26,9 @@ class App extends React.Component {
     $("li[name=text]").on("click", function(event) { //fonts click > detail popup_page
       var fontname = this.className.replaceAll(" ","+") //web-font Ex code parameter fontname
 
+      $(".backon").show();
+      $(".backon").css("backdrop-filter", 'blur(4px)')
+
       $(".popup").show(); //popup_page show
 
       $("input[name=import_type]").each(function() { //radio reset
@@ -52,7 +55,6 @@ class App extends React.Component {
       });
     });
 
-
     $("body").on("click", function(event) { //popup close
       if(event.target.value == 'close' || event.target.className == 'backon'){
           $(".popup").hide();
@@ -77,22 +79,30 @@ class App extends React.Component {
 
   render(){
     return (
-      <body>
+      <div> 
         <header>
           <div className='nowfontsize'>50</div><a> px</a>&ensp;
-          <input type="range" min="8" max="100" step="1" id="slider"/><hr/>
+          <input tabIndex="0" type="range" min="8" max="100" step="1" id="slider"/><hr/>
         </header>
         <main>
           <section>
             <ol className="fontbox">
-              <li tabindex="0" name='text' className='Comforter'><div name='fontname' className='showfontname'>Comforter</div>Almost before we knew it, we had left the ground.</li>
-              <li tabindex="0" name='text' className='Roboto'><div name='fontname' className='showfontname'>Roboto</div>Almost before we knew it, we had left the ground.</li>
-              <li tabindex="0" name='text' className='Mochiy Pop P One'><div name='fontname' className='showfontname'>Mochiy Pop P One</div>Almost before we knew it, we had left the ground.</li>
-              <li tabindex="0" name='text' className='Sedgwick Ave'><div name='fontname' className='showfontname'>Sedgwick Ave</div>Almost before we knew it, we had left the ground.</li>
-              <li tabindex="0" name='text' className='Source Code Pro'><div name='fontname' className='showfontname'>Source Code Pro</div>Almost before we knew it, we had left the ground.</li>
-              <li tabindex="0" name='text' className='Rubik Beastly'><div name='fontname' className='showfontname'>Rubik Beastly</div>Almost before we knew it, we had left the ground.</li>
-              <li tabindex="0" name='text' className='Neonderthaw'><div name='fontname' className='showfontname'>Neonderthaw</div>Almost before we knew it, we had left the ground.</li>
-              <li tabindex="0" name='text' className='Pacifico'><div name='fontname' className='showfontname'>Pacifico</div>Almost before we knew it, we had left the ground.</li>
+              <li tabIndex="0" name='text' className='Lobster Two'><div name='fontname' className='showfontname'>Lobster Two</div>Almost before we knew it, we had left the ground.</li>
+              <li tabIndex="0" name='text' className='Bangers'><div name='fontname' className='showfontname'>Bangers</div>Almost before we knew it, we had left the ground.</li>
+              <li tabIndex="0" name='text' className='Sacramento'><div name='fontname' className='showfontname'>Sacramento</div>Almost before we knew it, we had left the ground.</li>
+              <li tabIndex="0" name='text' className='Gloria Hallelujah'><div name='fontname' className='showfontname'>Gloria Hallelujah</div>Almost before we knew it, we had left the ground.</li>
+              <li tabIndex="0" name='text' className='Press Start 2P'><div name='fontname' className='showfontname'>Press Start 2P</div>Almost before we knew it, we had left the ground.</li>
+              <li tabIndex="0" name='text' className='Neucha'><div name='fontname' className='showfontname'>Lobster</div>Almost before we knew it, we had left the ground.</li>
+              <li tabIndex="0" name='text' className='Ole'><div name='fontname' className='showfontname'>Lobster</div>Almost before we knew it, we had left the ground.</li>
+              <li tabIndex="0" name='text' className='Creepster'><div name='fontname' className='showfontname'>Creepster</div>Almost before we knew it, we had left the ground.</li>
+              <li tabIndex="0" name='text' className='Comforter'><div name='fontname' className='showfontname'>Comforter</div>Almost before we knew it, we had left the ground.</li>
+              <li tabIndex="0" name='text' className='Roboto'><div name='fontname' className='showfontname'>Roboto</div>Almost before we knew it, we had left the ground.</li>
+              <li tabIndex="0" name='text' className='Mochiy Pop P One'><div name='fontname' className='showfontname'>Mochiy Pop P One</div>Almost before we knew it, we had left the ground.</li>
+              <li tabIndex="0" name='text' className='Sedgwick Ave'><div name='fontname' className='showfontname'>Sedgwick Ave</div>Almost before we knew it, we had left the ground.</li>
+              <li tabIndex="0" name='text' className='Source Code Pro'><div name='fontname' className='showfontname'>Source Code Pro</div>Almost before we knew it, we had left the ground.</li>
+              <li tabIndex="0" name='text' className='Rubik Beastly'><div name='fontname' className='showfontname'>Rubik Beastly</div>Almost before we knew it, we had left the ground.</li>
+              <li tabIndex="0" name='text' className='Neonderthaw'><div name='fontname' className='showfontname'>Neonderthaw</div>Almost before we knew it, we had left the ground.</li>
+              <li tabIndex="0" name='text' className='Pacifico'><div name='fontname' className='showfontname'>Pacifico</div>Almost before we knew it, we had left the ground.</li>
             </ol>
           </section>
 
@@ -111,22 +121,23 @@ class App extends React.Component {
               </ul>
             </section>
             <section>
-              <h4 tabindex="0" class="import_title">Use on the web</h4>
-              <div class="import_content">
+              <h4 tabIndex="0" className="import_title">Use on the web</h4>
+              <div className="import_content">
                 <div>To embed a font, copy the code into the of your html</div>
-                <input type="radio" name='import_type' id="import_link" value="import_link"/><label for="import_link">&lt;link&gt;</label>&ensp;
-                <input type="radio" name='import_type' id="import_tag" value="import_tag"/><label for="import_tag">@import</label>&ensp;
+                <input type="radio" name='import_type' id="import_link" value="import_link"/><label htmlFor="import_link">&lt;link&gt;</label>&ensp;
+                <input type="radio" name='import_type' id="import_tag" value="import_tag"/><label htmlFor="import_tag">@import</label>&ensp;
                 <input type="submit" id='radio_btn' value="확인"></input>
-                <div name="import_code" class="import_code"></div>
+                <div name="import_code" className="import_code"></div>
               </div>
-              <div class="cmd">
-                <input type="button" class="button" value="close"/>
+              <div className="cmd">
+                <input type="button" className="button" value="close"/>
               </div>
             </section>
           </article>
 
+          <div className="backon"></div>
         </main>
-      </body>
+      </div>
     );
   }
 }
