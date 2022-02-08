@@ -2,6 +2,10 @@ import './App.css';
 import React from 'react';
 import './style/css/index.css';
 
+const fonts = [{font : 'Lobster Two'}, {font : 'Bangers'}, {font : 'Sacramento'}, {font : 'Gloria Hallelujah'}, {font : 'Festive'}, {font : 'Neucha'}, {font : 'Ole'}, {font : 'Creepster'}, {font : 'Comforter'}, {font : 'Roboto'}, {font : 'Mochiy Pop P One'}, {font : 'Sedgwick Ave'}, {font : 'Source Code Pro'}, {font : 'Rubik Beastly'}, {font : 'Neonderthaw'}, {font : 'Pacifico'}];
+
+const fontWeight = [{weight: '200'}, {weight: '400'}, {weight: '600'}, {weight: '900'}];
+
 class App extends React.Component {
   render(){
     return (
@@ -13,22 +17,9 @@ class App extends React.Component {
         <main>
           <section className="swiper mySwiper">
             <ul className="swiper-wrapper">
-              <li name='text' id= 'Lobster Two' className="swiper-slide"><span className="fontText" style={{fontFamily: 'Lobster Two'}}>Almost before we knew it, we had left the ground.</span></li>
-              <li name='text' id= 'Bangers' className="swiper-slide"><span className="fontText" style={{fontFamily: 'Bangers'}}>Almost before we knew it, we had left the ground.</span></li>
-              <li name='text' id= 'Sacramento' className="swiper-slide"><span className="fontText" style={{fontFamily: 'Sacramento'}}>Almost before we knew it, we had left the ground.</span></li>
-              <li name='text' id= 'Gloria Hallelujah' className="swiper-slide"><span className="fontText" style={{fontFamily: 'Gloria Hallelujah'}}>Almost before we knew it, we had left the ground.</span></li>
-              <li name='text' id= 'Festive' className="swiper-slide"><span className="fontText" style={{fontFamily: 'Festive'}}>Almost before we knew it, we had left the ground.</span></li>
-              <li name='text' id= 'Neucha' className="swiper-slide"><span className="fontText" style={{fontFamily: 'Neucha'}}>Almost before we knew it, we had left the ground.</span></li>
-              <li name='text' id= 'Ole' className="swiper-slide"><span className="fontText" style={{fontFamily: 'Ole'}}>Almost before we knew it, we had left the ground.</span></li>
-              <li name='text' id= 'Creepster' className="swiper-slide"><span className="fontText" style={{fontFamily: 'Creepster'}}>Almost before we knew it, we had left the ground.</span></li>
-              <li name='text' id= 'Comforter' className="swiper-slide"><span className="fontText" style={{fontFamily: 'Comforter'}}>Almost before we knew it, we had left the ground.</span></li>
-              <li name='text' id= 'Roboto' className="swiper-slide"><span className="fontText" style={{fontFamily: 'Roboto'}}>Almost before we knew it, we had left the ground.</span></li>
-              <li name='text' id= 'Mochiy Pop P One' className="swiper-slide"><span className="fontText" style={{fontFamily: 'Mochiy Pop P One'}}>Almost before we knew it, we had left the ground.</span></li>
-              <li name='text' id= 'Sedgwick Ave' className="swiper-slide"><span className="fontText" style={{fontFamily: 'Sedgwick Ave'}}>Almost before we knew it, we had left the ground.</span></li>
-              <li name='text' id= 'Source Code Pro' className="swiper-slide"><span className="fontText" style={{fontFamily: 'Source Code Pro'}}>Almost before we knew it, we had left the ground.</span></li>
-              <li name='text' id= 'Rubik Beastly' className="swiper-slide"><span className="fontText" style={{fontFamily: 'Rubik Beastly'}}>Almost before we knew it, we had left the ground.</span></li>
-              <li name='text' id= 'Neonderthaw' className="swiper-slide"><span  className="fontText" style={{fontFamily: 'Neonderthaw'}}>Almost before we knew it, we had left the ground.</span></li>
-              <li name='text' id= 'Pacifico' className="swiper-slide"><span  className="fontText" style={{fontFamily: 'Pacifico'}}>Almost before we knew it, we had left the ground.</span></li>
+              {fonts.map(element => 
+                <li name='text' id={element.font} className="swiper-slide"><span className="fontText" style={{fontFamily: element.font}}>Almost before we knew it, we had left the ground.</span></li>
+              )}
             </ul>
               <span className="swiper-pagination"></span>
               <div className="swiper-button-next"></div>
@@ -40,43 +31,17 @@ class App extends React.Component {
 
           <article className="fontall">
             <ul className="fontall_ul">
-              <li style={{fontFamily: "Lobster Two"}}>Lobster Two</li>
-              <li style={{fontFamily: "Bangers"}}>Bangers</li>
-              <li style={{fontFamily: "Sacramento"}}>Sacramento</li>
-              <li style={{fontFamily: "Gloria Hallelujah"}}>Gloria Hallelujah</li>
-              <li style={{fontFamily: "Festive"}}>Festive</li>
-              <li style={{fontFamily: "Neucha"}}>Neucha</li>
-              <li style={{fontFamily: "Ole"}}>Ole</li>
-              <li style={{fontFamily: "Creepster"}}>Creepster</li>
-              <li style={{fontFamily: "Comforter"}}>Comforter</li>
-              <li style={{fontFamily: "Roboto"}}>Roboto</li>
-              <li style={{fontFamily: "Mochiy Pop P One"}}>Mochiy Pop P One</li>
-              <li style={{fontFamily: "Sedgwick Ave"}}>Sedgwick Ave</li>
-              <li style={{fontFamily: "Source Code Pro"}}>Source Code Pro</li>
-              <li style={{fontFamily: "Rubik Beastly"}}>Rubik Beastly</li>
-              <li style={{fontFamily: "Neonderthaw"}}>Neonderthaw</li>
-              <li style={{fontFamily: "Pacifico"}}>Pacifico</li>
+              {fonts.map(element =>
+                <li style={{fontFamily: element.font}}>{element.font}</li>
+              )}
             </ul>
           </article>
 
           <section>
             <ul className="fontbox">
-              <li tabIndex="0" name='text' id="Lobster Two" className='Lobster Two'><div name='fontname' className='showfontname'>Lobster Two</div>Almost before we knew it, we had left the ground.</li>
-              <li tabIndex="0" name='text' id="Bangers" className='Bangers'><div name='fontname' className='showfontname'>Bangers</div>Almost before we knew it, we had left the ground.</li>
-              <li tabIndex="0" name='text' id="Sacramento" className='Sacramento'><div name='fontname' className='showfontname'>Sacramento</div>Almost before we knew it, we had left the ground.</li>
-              <li tabIndex="0" name='text' id="Gloria Hallelujah" className='Gloria Hallelujah'><div name='fontname' className='showfontname'>Gloria Hallelujah</div>Almost before we knew it, we had left the ground.</li>
-              <li tabIndex="0" name='text' id="Festive" className='Festive'><div name='fontname' className='showfontname'>Festive</div>Almost before we knew it, we had left the ground.</li>
-              <li tabIndex="0" name='text' id="Neucha" className='Neucha'><div name='fontname' className='showfontname'>Neucha</div>Almost before we knew it, we had left the ground.</li>
-              <li tabIndex="0" name='text' id="Ole" className='Ole'><div name='fontname' className='showfontname'>Ole</div>Almost before we knew it, we had left the ground.</li>
-              <li tabIndex="0" name='text' id="Creepster" className='Creepster'><div name='fontname' className='showfontname'>Creepster</div>Almost before we knew it, we had left the ground.</li>
-              <li tabIndex="0" name='text' id="Comforter" className='Comforter'><div name='fontname' className='showfontname'>Comforter</div>Almost before we knew it, we had left the ground.</li>
-              <li tabIndex="0" name='text' id="Roboto" className='Roboto'><div name='fontname' className='showfontname'>Roboto</div>Almost before we knew it, we had left the ground.</li>
-              <li tabIndex="0" name='text' id="Mochiy Pop P One" className='Mochiy Pop P One'><div name='fontname' className='showfontname'>Mochiy Pop P One</div>Almost before we knew it, we had left the ground.</li>
-              <li tabIndex="0" name='text' id="Sedgwick Ave" className='Sedgwick Ave'><div name='fontname' className='showfontname'>Sedgwick Ave</div>Almost before we knew it, we had left the ground.</li>
-              <li tabIndex="0" name='text' id="Source Code Pro" className='Source Code Pro'><div name='fontname' className='showfontname'>Source Code Pro</div>Almost before we knew it, we had left the ground.</li>
-              <li tabIndex="0" name='text' id="Rubik Beastly" className='Rubik Beastly'><div name='fontname' className='showfontname'>Rubik Beastly</div>Almost before we knew it, we had left the ground.</li>
-              <li tabIndex="0" name='text' id="Neonderthaw" className='Neonderthaw'><div name='fontname' className='showfontname'>Neonderthaw</div>Almost before we knew it, we had left the ground.</li>
-              <li tabIndex="0" name='text' id="Pacifico" className='Pacifico'><div name='fontname' className='showfontname'>Pacifico</div>Almost before we knew it, we had left the ground.</li>
+              {fonts.map(element => 
+                <li tabIndex="0" name='text' id={element.font} className={element.font}><div name="fontname" className='showfontname'>Lobster Two</div>Almost before we knew it, we had left the ground.</li>
+              )}
             </ul>
           </section>
 
@@ -84,14 +49,12 @@ class App extends React.Component {
             <section>
               <h4 className='title'>text</h4>
               <ul className='content'>
-                <li style={{fontWeight:'200'}}>Almost before we knew it, we had left the ground.</li>
-                <li style={{fontWeight:'200', fontStyle: 'italic'}}>Almost before we knew it, we had left the ground.</li>
-                <li style={{fontWeight:'400'}}>Almost before we knew it, we had left the ground.</li>
-                <li style={{fontWeight:'400', fontStyle: 'italic'}}>Almost before we knew it, we had left the ground.</li>
-                <li style={{fontWeight:'600'}}>Almost before we knew it, we had left the ground.</li>
-                <li style={{fontWeight:'600', fontStyle: 'italic'}}>Almost before we knew it, we had left the ground.</li>
-                <li style={{fontWeight:'900'}}>Almost before we knew it, we had left the ground.</li>
-                <li style={{fontWeight:'900', fontStyle: 'italic'}}>Almost before we knew it, we had left the ground.</li>
+                {fontWeight.map(element =>
+                  <div>
+                    <li style={{fontWeight: element.weight}}>Almost before we knew it, we had left the ground.</li>
+                    <li style={{fontWeight: element.weight, fontStyle: 'italic'}}>Almost before we knew it, we had left the ground.</li>
+                  </div>
+                )}
               </ul>
             </section>
             <section>
