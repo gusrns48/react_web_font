@@ -32,7 +32,7 @@ class App extends React.Component {
           <article className="fontall">
             <ul className="fontall_ul">
               {fonts.map(element =>
-                <li style={{fontFamily: element.font}}>{element.font}</li>
+                <li name='text' id={element.font} style={{fontFamily: element.font}}>{element.font}</li>
               )}
             </ul>
           </article>

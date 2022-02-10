@@ -30,7 +30,7 @@ main {
 }
 
 .swiper {
-  display: block;
+  display: none;
   position: relative;
   width: 90%;
   height: 100%;

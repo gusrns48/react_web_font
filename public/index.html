@@ -57,25 +57,45 @@
     </script>
     <script>
       $(document).ready(function(){
-        var $li = $("li[name=text]");
-        $("li[name=text]").keydown(function(keyNum){ //fonts enter > detail popup_page
+        var $li_text = $("li[name=text]");
+        var $backon = $(".backon");
+        var $fontall = $(".fontall");
+        var $popup = $(".popup");
+        var $import_type = $("input[name=import_type]");
+        var $import_content = $(".import_content");
+        var $import_code = $(".import_code");
+        var $import_title = $(".import_title");
+
+        $('input').on('change', function () {
+          var fontsize = $(this).val();
+          $li_text.css('font-size', fontsize + 'px')
+          //$('div[name=fontname]').css('font-size', v / 3 + 'px')
+    
+          if(fontsize==='import_link'||fontsize==='import_tag'){
+            fontsize = $('.nowfontsize').text();
+          }
+          $('.nowfontsize').html(fontsize)
+        });
+
+        $li_text.keydown(function(keyNum){ //fonts enter > detail popup_page
           if(keyNum.keyCode == 13){
             this.click()
           }
         });
-        $("li[name=text]").on("click", function(event) { //fonts click > detail popup_page
+        $li_text.on("click", function(event) { //fonts click > detail popup_page
           var fontname = this.id.replaceAll(" ","+") //web-font Ex code parameter fontname
           
-          $(".backon").show();
+          $backon.show();
+          $fontall.hide();
           
-          $(".popup").show(); //popup_page show
+          $popup.show(); //popup_page show
   
-          $("input[name=import_type]").each(function() { //radio reset
+          $import_type.each(function() { //radio reset
             $(this).prop('checked', false);
           });
   
-          $(".import_content").hide(); //Ex code reset
-          $('.import_code').hide();
+          $import_content.hide(); //Ex code reset
+          $import_code.hide();
   
           $('.title').html(this.id) //popup title, content font change
           $('.content').css('font-family',this.id)
@@ -83,41 +103,41 @@
           $('#radio_btn').click(function () { //web-font Ex code change and show
               var radioVal = $('input[name="import_type"]:checked').val(); //radio checked ?
               if(radioVal == 'import_link'){
-                $('.import_code').html('&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt<br>')
-                $('.import_code').append('&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt<br>')
-                $('.import_code').append(`&lt;link href=https://fonts.googleapis.com/css2?family=${fontname}&display=swap" rel="stylesheet"&gt;`)
+                $import_code.html('&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt<br>')
+                $import_code.append('&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt<br>')
+                $import_code.append(`&lt;link href=https://fonts.googleapis.com/css2?family=${fontname}&display=swap" rel="stylesheet"&gt;`)
               }
               else if(radioVal == 'import_tag'){
-                $('.import_code').html(`&lt;style&gt;@import url('https://fonts.googleapis.com/css2?family=${fontname}&display=swap');&lt;style&gt;`)
+                $import_code.html(`&lt;style&gt;@import url('https://fonts.googleapis.com/css2?family=${fontname}&display=swap');&lt;style&gt;`)
               }
-              $('.import_code').show();
+              $import_code.show();
           });
         });
         
         $("body").on("click", function(event) { //popup close
             if(event.target.value == 'close' || event.target.className == 'backon'){
-                $(".popup").hide();
-                $(".backon").hide();
-                $(".fontall").hide();
+                $popup.hide();
+                $backon.hide();
+                $fontall.hide();
             }
         });
   
-        $(".import_title").keydown(function(keyNum){
+        $import_title.keydown(function(keyNum){
           if(keyNum.keyCode == 13){
             this.click()
           }
         });
-        $(".import_title").on("click", function(event) { //web-font Ex code swich button
-          if($('.import_content').css('display') =='none'){
-            $('.import_content').show()
+        $import_title.on("click", function(event) { //web-font Ex code swich button
+          if($import_content.css('display') =='none'){
+            $import_content.show()
           } else {
-            $('.import_content').hide()
+            $import_content.hide()
           }
         });
   
         $(".allshow").on("click", function(event){
-          $(".backon").show();
-          $(".fontall").show();
+          $backon.show();
+          $fontall.show();
         });
   
       });
